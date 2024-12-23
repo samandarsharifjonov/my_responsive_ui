@@ -1,0 +1,12 @@
+name: example
+description: A Flutter package for creating responsive UIs with easy to use extensions and utilities.
+publish_to: 'none'
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  my_responsive_ui:
+    path: ../
