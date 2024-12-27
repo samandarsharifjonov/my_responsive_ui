@@ -19,9 +19,9 @@ class MyApp extends StatelessWidget {
     // Returns the MaterialApp with a responsive layout
     return const MaterialApp(
       home: ResponsiveInitializer(
-        baseHeight: 812,  // Base height for scaling
-        baseWidth: 375,   // Base width for scaling
-        child: HomePage(),  // The home page widget
+        baseHeight: 812, // Base height for scaling
+        baseWidth: 375, // Base width for scaling
+        child: HomePage(), // The home page widget
       ),
     );
   }
@@ -37,36 +37,48 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Builds the main UI layout for the home page
     return Scaffold(
       appBar: AppBar(
         title: Text('Responsive UI Demo', style: TextStyle(fontSize: 18.sp)),
         // Text style scales the font size based on screen size using .sp
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.r),  // Responsive padding with .r scaling
+        padding: EdgeInsets.all(16.r), // Responsive padding with .r scaling
         child: Column(
           children: [
             // A responsive container with scaled height and width
             Container(
-              height: 200.h,  // Scaled height using .h
-              width: double.infinity,  // Takes full width
+              height: isPortrait(context) ? 200.h : 150.h,
+              // Height changes based on orientation
+              width: double.infinity,
+              // Takes full width
               decoration: BoxDecoration(
                 color: Colors.blue,
-                borderRadius: BorderRadius.circular(12.r),  // Scaled border radius with .r
+                borderRadius:
+                    BorderRadius.circular(12.r), // Scaled border radius with .r
               ),
               child: Center(
                 child: Text(
-                  'Responsive Container',
+                  isPortrait(context) ? 'Portrait Mode' : 'Landscape Mode',
                   style: TextStyle(
-                    fontSize: 24.sp,  // Scaled font size using .sp
-                    color: Colors.white,
-                  ),
+                      fontSize: 24.sp, // Scaled font size using .sp
+                      color: Colors.white),
                 ),
               ),
             ),
-            vs(20),  // Vertical spacing using .h scaling
-            // Additional widgets can be added here...
+            vs(20), // Vertical spacing using .h scaling
+
+            Center(
+              child: Text(
+                // Using ternary operator to check platform
+                // isIOS(context) and isAndroid(context) functions are used to detect device platform
+                isIOS(context)
+                    ? 'This is an iOS device' // If iOS
+                    : isAndroid(context) // If not iOS, check if Android
+                        ? 'This is an Android device' // If Android
+                        : 'Unknown Platform', // If neither iOS nor Android
+              ),
+            ),
           ],
         ),
       ),

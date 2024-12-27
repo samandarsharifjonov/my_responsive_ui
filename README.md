@@ -4,11 +4,14 @@ A Flutter package that makes it easy to create responsive UIs across different s
 
 ## Features
 
-- Easy to use extensions for responsive dimensions (.h, .w, .sp, .r)
-- Built-in spacing utilities (vs, hs)
-- Safe dimension calculations with min/max boundaries
-- Orientation change support
+- Easy to use extensions for responsive dimensions (.h, .w, .sp, .r).
+- Built-in spacing utilities (vs, hs).
+- Safe dimension calculations with min/max boundaries.
+- Orientation change support.
 - Memory leak prevention
+- Support for portrait mode.
+- Responsive layout based on screen size.
+- Support for screen size adaptation on both iOS and Android platforms.
 
 ## Getting started
 
@@ -64,5 +67,7 @@ Column(
 ```
 
 ## Socials
+
+If you have any feedback, suggestions, or issues, feel free to contact us. Your thoughts are highly appreciated.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/samandarbeksharifjonov)  [![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/samandarbeksharifjonov) [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/sharifjonov.samandar)

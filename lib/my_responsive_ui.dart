@@ -1,4 +1,17 @@
+import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
+
+/// Returns `true` if the device is in portrait mode.
+bool isPortrait(BuildContext context) => MediaQuery.of(context).orientation == Orientation.portrait;
+
+/// Returns `true` if the device is in landscape mode.
+bool isLandscape(BuildContext context) => MediaQuery.of(context).orientation == Orientation.landscape;
+
+/// Returns `true` if the platform is iOS.
+bool isIOS(BuildContext context) => Theme.of(context).platform == TargetPlatform.iOS;
+
+/// Returns `true` if the platform is Android.
+bool isAndroid(BuildContext context) => Theme.of(context).platform == TargetPlatform.android;
 
 /// A utility class for responsive design.
 ///
@@ -81,16 +94,16 @@ extension ExtSize on num {
 /// This widget uses the [height] property of [ResponsiveUtil] to scale the vertical
 /// space based on the current screen size.
 Widget verticalSp(double height) => SizedBox(
-      height: height.h.clamp(0.0, double.infinity),
-    );
+  height: height.h.clamp(0.0, double.infinity),
+);
 
 /// A widget that provides horizontal spacing with responsive width scaling.
 ///
 /// This widget uses the [width] property of [ResponsiveUtil] to scale the horizontal
 /// space based on the current screen size.
 Widget horizontalSp(double width) => SizedBox(
-      width: width.w.clamp(0.0, double.infinity),
-    );
+  width: width.w.clamp(0.0, double.infinity),
+);
 
 /// Alias for [verticalSp] to simplify vertical spacing usage.
 Widget vs(double height) => verticalSp(height);
@@ -123,7 +136,7 @@ class ResponsiveInitializer extends StatefulWidget {
     required this.child,
     super.key,
   }) : assert(baseHeight > 0 && baseWidth > 0,
-            'Base dimensions must be positive');
+  'Base dimensions must be positive');
 
   @override
   State<ResponsiveInitializer> createState() => _ResponsiveInitializerState();
