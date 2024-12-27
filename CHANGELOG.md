@@ -1,4 +1,4 @@
-## [1.0.3+1] - 2024-12-27
+## 1.0.3+1
 ### Added
 - Support for portrait mode.
 - Responsive layout based on screen size.
@@ -10,10 +10,9 @@
 ### Changed
 - Updated existing functionality to better support screen size adaptation.
 
-
 ## 1.0.2+1
 - Added documentation for public members
-- 
+
 ## 1.0.2
 - Added Example to help you understand the code
 
